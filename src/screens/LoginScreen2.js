@@ -4,7 +4,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
-  TextInput,
+  
 } from "react-native";
 import SVGcomponent from "../components/SVGcomponent";
 import login from "../../assets/login.svg";
@@ -20,15 +20,14 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View>
         <Text style={{ fontWeight: "600", fontSize: 16 }}>
-          Enter your Ghana Card number
+          Identity found. Send code to number ending with
+          <Text style={{ fontWeight: "800" }}>8765</Text> ?
         </Text>
-        <TextInput style={css.textInput} />
-
         <TouchableOpacity
-          style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("Login 2")}
+          style={css.buttons}
+          onPress={() => navigation.navigate("OTP")}
         >
-          <Text style={css.text}>Next</Text>
+          <Text style={[css.text, { fontWeight: "800" }]}>Send Code</Text>
         </TouchableOpacity>
       </View>
       <View>
@@ -87,18 +86,5 @@ const css = StyleSheet.create({
     borderRadius: 5,
     marginVertical: 14,
     padding: 10,
-  },
-  shadowProp: {
-    shadowColor: "blue",
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 3,
-    shadowRadius: 3,
-    elevation: 2,
-  },
-  continueBut: {
-    borderRadius: 12,
-    width: 325,
-    height: 52,
-    backgroundColor: "#F9B7BF",
   },
 });

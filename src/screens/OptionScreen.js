@@ -30,6 +30,8 @@ const OptionScreen = ({ navigation }) => {
             checked={hospital}
             onPress={() => {
               setHospital(!hospital);
+              setAmbulance(false);
+              setIndividual(false);
             }}
           />
           <Text style={css.text}>
@@ -43,6 +45,8 @@ const OptionScreen = ({ navigation }) => {
             checked={individual}
             onPress={() => {
               setIndividual(!individual);
+              setAmbulance(false);
+              setHospital(false);
             }}
           />
           <Text style={css.text}>
@@ -57,6 +61,8 @@ const OptionScreen = ({ navigation }) => {
             checked={ambulance}
             onPress={() => {
               setAmbulance(!ambulance);
+              setHospital(false);
+              setIndividual(false);
             }}
           />
           <Text style={css.text}>
@@ -69,7 +75,15 @@ const OptionScreen = ({ navigation }) => {
       <View>
         <TouchableOpacity
           style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => {
+            if (hospital) {
+              navigation.navigate("Hospital Login");
+            } else if (ambulance) {
+              navigation.navigate("Driver Login");
+            } else if (individual) {
+              navigation.navigate("Individual Login");
+            }
+          }}
         >
           <Text style={css.text}>Continue</Text>
         </TouchableOpacity>

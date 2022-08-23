@@ -4,9 +4,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import LaunchScreen from "./src/screens/LaunchScreen";
 import OptionScreen from "./src/screens/OptionScreen";
+import IndividualLoginScreen from "./src/screens/IndividualLoginScreen";
 import LoginScreen from "./src/screens/LoginScreen";
-import LoginScreen2 from "./src/screens/LoginScreen2";
 import OTPScreen from "./src/screens/OTPScreen";
+import HospitalLoginScreen from "./src/screens/HospitalLoginScreen";
+import DriverLoginScreen from "./src/screens/DriverLoginScreen";
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
@@ -19,14 +21,24 @@ export default function App() {
         />
         <Stack.Screen name="choose an option" component={OptionScreen} />
         <Stack.Screen
+          name="Individual Login"
+          options={{ title: "login page" }}
+          component={IndividualLoginScreen}
+        />
+        <Stack.Screen
           name="Login"
           options={{ title: "login page" }}
           component={LoginScreen}
         />
         <Stack.Screen
-          name="Login 2"
-          options={{ title: "login page" }}
-          component={LoginScreen2}
+          name="Driver Login"
+          options={{ title: "Ambulance Driver" }}
+          component={DriverLoginScreen}
+        />
+        <Stack.Screen
+          name="Hospital Login"
+          options={{ title: "Hospital" }}
+          component={HospitalLoginScreen}
         />
         <Stack.Screen
           name="OTP"

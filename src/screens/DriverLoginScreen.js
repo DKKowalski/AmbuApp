@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  TextInput,
+} from "react-native";
 import SVGcomponent from "../components/SVGcomponent";
 import login from "../../assets/login.svg";
-import { AntDesign } from "@expo/vector-icons";
 
-const LoginScreen = ({ navigation }) => {
+
+const DriverLoginScreen = ({ navigation }) => {
   const [keyword, setKeyword] = useState("");
 
   return (
@@ -12,48 +18,36 @@ const LoginScreen = ({ navigation }) => {
       <View>
         <SVGcomponent Svg={login} />
       </View>
-      <View style={{ marginVertical: 100 }}>
+      <View style={{ marginVertical: 100, justifyContent: "space-between" }}>
         <Text style={{ fontWeight: "600", fontSize: 16 }}>
-          Identity found. Send code to number ending with
-          <Text style={{ fontWeight: "800" }}>8765</Text> ?
+          Enter your Driver License
         </Text>
+        <TextInput style={css.textInput} />
+
         <TouchableOpacity
-          style={css.buttons}
-          onPress={() => navigation.navigate("OTP")}
+          style={[css.continueBut, css.shadowProp]}
+          onPress={() => navigation.navigate("Login 2")}
         >
-          <Text style={[css.text, { fontWeight: "800" }]}>Send Code</Text>
+          <Text style={css.text}>Next</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default LoginScreen;
+export default DriverLoginScreen;
 const css = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
   },
-  orText: {
-    fontWeight: "600",
-    fontSize: 24,
-    color: "#FED5DA",
-    alignSelf: "center",
-  },
-  buttons: {
-    width: 325,
-    height: 50,
 
-    borderWidth: 1,
-    borderRadius: 12,
-    marginVertical: 5,
-  },
   text: {
     flex: 1,
     alignSelf: "center",
-    fontWeight: "400",
-    fontSize: 16,
+    fontWeight: "800",
+    fontSize: 24,
     justifyContent: "space-evenly",
     padding: 10,
   },
@@ -62,5 +56,18 @@ const css = StyleSheet.create({
     borderRadius: 5,
     marginVertical: 14,
     padding: 10,
+  },
+  shadowProp: {
+    shadowColor: "blue",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 3,
+    shadowRadius: 3,
+    elevation: 2,
+  },
+  continueBut: {
+    borderRadius: 12,
+    width: 325,
+    height: 52,
+    backgroundColor: "#F9B7BF",
   },
 });

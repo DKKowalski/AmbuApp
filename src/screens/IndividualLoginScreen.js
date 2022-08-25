@@ -26,7 +26,7 @@ const IndividualLoginScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("Login 2")}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text style={css.text}>Next</Text>
         </TouchableOpacity>

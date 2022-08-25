@@ -33,7 +33,7 @@ const OTPScreen = ({ navigation }) => {
       <View>
         <TouchableOpacity
           style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("")}
+          onPress={() => navigation.navigate("Tab")}
         >
           <Text style={css.text}>Continue</Text>
         </TouchableOpacity>

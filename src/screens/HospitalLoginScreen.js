@@ -9,7 +9,6 @@ import {
 import SVGcomponent from "../components/SVGcomponent";
 import login from "../../assets/login.svg";
 
-
 const HospitalLoginScreen = ({ navigation }) => {
   const [keyword, setKeyword] = useState("");
 
@@ -35,7 +34,7 @@ const HospitalLoginScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("Login 2")}
+          onPress={() => navigation.navigate("Tab")}
         >
           <Text style={css.text}>Next</Text>
         </TouchableOpacity>

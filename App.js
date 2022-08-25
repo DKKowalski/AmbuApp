@@ -9,6 +9,7 @@ import LoginScreen from "./src/screens/LoginScreen";
 import OTPScreen from "./src/screens/OTPScreen";
 import HospitalLoginScreen from "./src/screens/HospitalLoginScreen";
 import DriverLoginScreen from "./src/screens/DriverLoginScreen";
+import TabNavigator from "./src/screens/TabNavigator";
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
@@ -44,6 +45,11 @@ export default function App() {
           name="OTP"
           options={{ title: "Verification" }}
           component={OTPScreen}
+        />
+        <Stack.Screen
+          name="Tab"
+          options={{ title: "" }}
+          component={TabNavigator}
         />
       </Stack.Navigator>
     </NavigationContainer>

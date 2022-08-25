@@ -9,7 +9,6 @@ import {
 import SVGcomponent from "../components/SVGcomponent";
 import login from "../../assets/login.svg";
 
-
 const DriverLoginScreen = ({ navigation }) => {
   const [keyword, setKeyword] = useState("");
 
@@ -26,7 +25,7 @@ const DriverLoginScreen = ({ navigation }) => {
 
         <TouchableOpacity
           style={[css.continueBut, css.shadowProp]}
-          onPress={() => navigation.navigate("Login 2")}
+          onPress={() => navigation.navigate("Login")}
         >
           <Text style={css.text}>Next</Text>
         </TouchableOpacity>
